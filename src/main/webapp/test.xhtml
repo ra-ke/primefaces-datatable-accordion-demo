@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="jakarta.faces.facelets"
-      xmlns:f="jakarta.faces.core"
       xmlns:h="jakarta.faces.html"
       xmlns:p="primefaces">
 
-    <h:head>
-        <title>PrimeFaces Test</title>
-        <h:outputScript name="test.js" />
-        <h:outputStylesheet name="test.css" />
-    </h:head>
-    <h:body>
+<h:head>
+    <title>PrimeFaces Test</title>
+    <h:outputScript name="test.js"/>
+    <h:outputStylesheet name="test.css"/>
+</h:head>
+<h:body>
+    <div class="fixed-element">
+        <h:outputText value="this might be a menu header"/>
+    </div>
+    <div class="table-container">
+        <p:accordionPanel multiple="true">
+            <p:tab title="Authors">
+                <p:dataTable value="#{testView.authors}" var="author" rows="10">
+                    <p:column headerText="Name" field="name" filterable="false"/>
+                    <p:column headerText="Nationality" field="nationality" filterable="false"/>
+                    <p:column headerText="Year of Birth" field="yearOfBirth" filterable="false"/>
+                </p:dataTable>
+            </p:tab>
 
-        <h1>#{testView.string}</h1>
-        <h:form id="frmTest">
-
-        </h:form>
-
-    </h:body>
+            <p:tab title="Albums">
+                <p:dataTable value="#{testView.albums}" var="albums"
+                             stickyHeader="true" stickyTopAt=".fixed-element">
+                    <p:column headerText="Albumname" field="name" filterable="false"/>
+                    <p:column headerText="Artis" field="artist" filterable="false"/>
+                    <p:column headerText="Released" field="released" filterable="false"/>
+                </p:dataTable>
+            </p:tab>
+        </p:accordionPanel>
+    </div>
+</h:body>
 </html>

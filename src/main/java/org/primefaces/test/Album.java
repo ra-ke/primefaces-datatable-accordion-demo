@@ -7,14 +7,14 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode
-public class TestObject implements Serializable {
+public class Album implements Serializable {
 
     private String id;
     private String name;
     private String artist;
     private Integer released;
 
-    public TestObject(String name, String artist, Integer released) {
+    public Album( String name, String artist, Integer released) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
         this.artist = artist;

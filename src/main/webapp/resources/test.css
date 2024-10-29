@@ -1,1 +1,23 @@
 /* Place any CSS here you want loaded in test.xhtml */
+* {
+    box-sizing: border-box;
+}
+
+.fixed-element {
+    position: fixed;
+    height: 70px;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    display: flex;
+    background-color: rgb(218, 218, 218);
+    width: 100%;
+    z-index: 997;
+}
+
+.table-container {
+    padding-top: 75px;
+}
+.table-container .ui-accordion .ui-accordion-content {
+    overflow: visible;
+}
